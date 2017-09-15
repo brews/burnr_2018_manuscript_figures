@@ -36,7 +36,7 @@ seasonal_colors <- c("#d62728", "#ff7f0e", "#bcbd22", "#2ca02c", "#1f77b4", "#7f
 
 
 # Plot into PDF
-svg('fig4.svg', width = 6, height = 4)
+svg('fig_bandobeachballs.svg', width = 5.5, height = 4)
 
 m <- matrix(c(1:10, rep(11, 5)),
             nrow = 3, ncol = 5, byrow = TRUE)
