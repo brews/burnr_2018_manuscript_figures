@@ -58,7 +58,7 @@ location$bottom <- 35.69
 map <- get_map(location = unlist(location), source = "stamen", 
                maptype = "terrain-background")
 # Output as SVG in current working directly.
-svg("fig2a.svg", width = 4.5, height = 4)
+svg("fig_bandomap_a.svg", width = 4.5, height = 4)
 p <- ggmap(map)
 p <- (p + geom_polygon(data = fortify(burnblocks), 
                        aes(long, lat, group = group),
@@ -116,7 +116,7 @@ block_stats <- subset(block_stats, !(blockid %in% blockstocrop))
 
 # Now for some plotting.
 # Output as SVG to current working directly.
-svg("fig2b.svg", width = 4.5, height = 4)
+svg("fig_bandomap_b.svg", width = 4.5, height = 4)
 # Start with generic demographic plot, facetted on burnblocks.
 p <- plot_demograph(sort(fhx_manyscars_select),
                     facet_group = treemeta_manyscars_select$blockid,
