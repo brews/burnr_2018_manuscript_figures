@@ -6,6 +6,7 @@ require(rgdal)
 require(ggmap)
 require(broom)  # Needed to plot polygons in ggmap.
 require(rgeos)  # Needed to create polygon centroids for labels.
+require(ggrepel)
 # "ggrepel" - Package for labels.
 
 # Fix Stamen terrain tiles bug in ggmap. May not need in future.
@@ -66,7 +67,7 @@ p <- (p + geom_polygon(data = fortify(burnblocks),
         + geom_point(aes(x = coords.x1, y = coords.x2), 
                      data = data.frame(treemeta_manyscars), 
                      alpha = 0.9, color = "#7570b3")
-        + geom_text(aes(x = x, y = y, label = rownames(burnblocks_centroids)), 
+        + geom_text_repel(aes(x = x, y = y, label = rownames(burnblocks_centroids)), 
                     data = burnblocks_centroids, size = 3)
         + xlab('')
         + ylab('')
