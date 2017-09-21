@@ -6,8 +6,7 @@ require(rgdal)
 require(ggmap)
 require(broom)  # Needed to plot polygons in ggmap.
 require(rgeos)  # Needed to create polygon centroids for labels.
-require(ggrepel)
-# "ggrepel" - Package for labels.
+require(ggrepel)  # Package for centroid labels.
 
 # Fix Stamen terrain tiles bug in ggmap. May not need in future.
 source("stamenmap_fix.R")
@@ -59,7 +58,7 @@ location$bottom <- 35.69
 map <- get_map(location = unlist(location), source = "stamen", 
                maptype = "terrain-background")
 # Output as SVG in current working directly.
-svg("fig_bandomap_a.svg", width = 4.5, height = 3.5)
+svg("fig_bandomap_a.svg", width = 5.5, height = 3.5)
 p <- ggmap(map)
 p <- (p + geom_polygon(data = fortify(burnblocks), 
                        aes(long, lat, group = group),
@@ -117,7 +116,7 @@ block_stats <- subset(block_stats, !(blockid %in% blockstocrop))
 
 # Now for some plotting.
 # Output as SVG to current working directly.
-svg("fig_bandomap_b.svg", width = 4.5, height = 3.5)
+svg("fig_bandomap_b.svg", width = 5.5, height = 3.5)
 # Start with generic demographic plot, facetted on burnblocks.
 p <- plot_demograph(sort(fhx_manyscars_select),
                     facet_group = treemeta_manyscars_select$blockid,
