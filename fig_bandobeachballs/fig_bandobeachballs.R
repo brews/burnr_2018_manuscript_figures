@@ -30,7 +30,7 @@ years <- as.numeric(unique(rownames(x)))
 
 
 # Labels and colors for plot
-season_labels <- c("Dormant", "Early earlwood", "Middle earlywood",
+season_labels <- c("Dormant", "Early earlywood", "Middle earlywood",
                    "Late earlywood", "Latewood", "Unknown")
 seasonal_colors <- c("#d62728", "#ff7f0e", "#bcbd22", "#2ca02c", "#1f77b4", "#7f7f7f")
 
@@ -57,4 +57,3 @@ legend(x = "top", inset = 0, title="Fire event position", legend = season_labels
        col = seasonal_colors, lwd = 5, cex = 1, horiz = FALSE, ncol = 3, bty = 'n')
 
 dev.off()
-par(op)
