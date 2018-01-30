@@ -67,7 +67,8 @@ p <- (p + geom_polygon(data = fortify(burnblocks),
                      data = data.frame(treemeta_manyscars), 
                      alpha = 0.75, color = "#7570b3")
         + geom_text_repel(aes(x = x, y = y, label = rownames(burnblocks_centroids)), 
-                    data = burnblocks_centroids, size = 4)
+                    data = burnblocks_centroids, size = 3, point.padding = NA, 
+                    min.segment.length = 0.2)
         + xlab('')
         + ylab('')
       )
